@@ -3,8 +3,6 @@ const router = express.Router();
 const Movie = require('../models/Movie');
 
 router.post('/new', (req, res, next) => {
-
-  
   const movie = new Movie (req.body);
   movie .save()
     .then(data => {
