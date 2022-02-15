@@ -49,15 +49,13 @@ router.get('/:movie_id', (req, res, next) => {
   });
 });
 
-
 router.put('/:movie_id', (req, res, next) => {
   const promise = Movie.findByIdAndUpdate(
     req.params.movie_id,
-    req.body,
-    {
-      new: true
-    }
-    );
+    
+{    
+  director_id: '620b5c53c5f1ef8cfa0bd836'
+});
 
   promise.then((movie) => {
     if(!movie)

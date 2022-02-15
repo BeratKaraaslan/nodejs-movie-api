@@ -49,14 +49,13 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((results) => console.log('baglanti kuruldu'))
   .catch((err) => console.log('baglanti hatasi'))
 
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://admin:awO4Bqkqna@cluster0.tiv56.mongodb.net/movie-api?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+//  const { MongoClient } = require('mongodb');
+//  const uri = "mongodb+srv://admin:awO4Bqkqna@cluster0.tiv56.mongodb.net/movie-api?retryWrites=true&w=majority"; const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//  client.connect(err => {
+//    const collection = client.db("test").collection("devices");
+//   //perform actions on the collection object
+//    client.close();
+//  });
 
 
 module.exports = app;
