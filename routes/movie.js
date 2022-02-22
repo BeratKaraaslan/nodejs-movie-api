@@ -71,9 +71,8 @@ router.get('/:movie_id', (req, res, next) => {
 router.put('/:movie_id', (req, res, next) => {
   const promise = Movie.findByIdAndUpdate(
     req.params.movie_id,
-
-    {
-      director_id: '620b5c53c5f1ef8cfa0bd836'
+    req.body, {
+      new: true,
     });
 
   promise.then((movie) => {
@@ -83,6 +82,7 @@ router.put('/:movie_id', (req, res, next) => {
       });
 
     res.json(movie);
+    res.status(200).json(movie);
   }).catch((err) => {
     res.json(err);
   });
@@ -100,8 +100,8 @@ router.delete('/:movie_id', (req, res, next) => {
         message: 'The movie not found'
       });
 
-    res.json('Silme işlemi yapıldı.');
-  }).catch((err) => {
+      res.json({ status: 1 });
+    }).catch((err) => {
     res.json(err);
   });
 });
@@ -126,6 +126,5 @@ router.get('/between/:start_year/:end_year', (req, res) => {
     res.json(err);
   });
 });
-
 
 module.exports = router;
